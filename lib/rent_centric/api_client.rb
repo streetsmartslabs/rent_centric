@@ -265,7 +265,12 @@ module RentCentric
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+      # Given the deprecation of `URI::escape` and `URI::encode`
+      # it is needed to replace it with `URI::encode_www_form_component`.
+      # This method, does replace spaces with `+` instead of `%20`.
+      # Therefore, to keep backwards compatibility, we're replacing the resulting `+`
+      # back with `%20`.
+      URI.encode_www_form_component(@config.base_url + path).gsub('+', '%20')
     end
 
     # Builds the HTTP request body

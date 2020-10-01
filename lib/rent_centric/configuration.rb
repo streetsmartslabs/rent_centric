@@ -178,7 +178,12 @@ module RentCentric
 
     def base_url
       url = "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+      # Given the deprecation of `URI::escape` and `URI::encode`
+      # it is needed to replace it with `URI::encode_www_form_component`.
+      # This method, does replace spaces with `+` instead of `%20`.
+      # Therefore, to keep backwards compatibility, we're replacing the resulting `+`
+      # back with `%20`.
+      URI.encode_www_form_component(url).gsub('+', '%20')
     end
 
     # Gets API key (with prefix if set).
