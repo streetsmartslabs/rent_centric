@@ -103,8 +103,12 @@ module RentCentric
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
+        split_vals = value.split('/')
+        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/')
         DateTime.parse(value)
       when :Date
+        split_vals = value.split('/')
+        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/')
         Date.parse(value)
       when :String
         value.to_s
