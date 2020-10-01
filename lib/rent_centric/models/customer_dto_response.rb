@@ -143,7 +143,9 @@ module RentCentric
       end
 
       if attributes.has_key?(:'Birthday')
-        self.birthday = attributes[:'Birthday']
+        split_vals = attributes[:'Birthday'].split('/')
+        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/') + ' ' + RentCentric.configure.timezone_abbr
+        self.birthday = Date.parse(value)
       end
 
       if attributes.has_key?(:'LicenseNumber')
