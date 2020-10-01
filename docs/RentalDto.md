@@ -1,0 +1,41 @@
+# RentCentric::RentalDto
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**rental_id** | **Integer** |  | [optional] 
+**reservation_id** | **Integer** |  | [optional] 
+**ra_number** | **String** |  | [optional] 
+**pick_up_date_time** | **DateTime** |  | [optional] 
+**drop_off_date_time** | **DateTime** |  | [optional] 
+**is_passed** | **BOOLEAN** |  | [optional] 
+**rental_date** | **DateTime** |  | [optional] 
+**net_rate** | **Float** |  | [optional] 
+**taxes** | **String** |  | [optional] 
+**insurances** | **String** |  | [optional] 
+**misccharges** | **String** |  | [optional] 
+**total_amount** | **Float** |  | [optional] 
+**currency_code** | **String** |  | [optional] 
+**is_cancelled** | **BOOLEAN** |  | [optional] 
+**is_checked_out** | **BOOLEAN** |  | [optional] 
+**is_checked_in** | **BOOLEAN** |  | [optional] 
+**is_confirmed** | **BOOLEAN** |  | [optional] 
+**rate_id** | **Integer** |  | [optional] 
+**daily_rate** | **Float** |  | [optional] 
+**weekly_rate** | **Float** |  | [optional] 
+**monthly_rate** | **Float** |  | [optional] 
+**customer_id** | **Integer** |  | [optional] 
+**customer_first_name** | **String** |  | [optional] 
+**customer_last_name** | **String** |  | [optional] 
+**is_credit** | **BOOLEAN** |  | [optional] 
+**customer_notes** | **String** |  | [optional] 
+**is_business** | **BOOLEAN** |  | [optional] 
+**location** | [**LocationDTO**](LocationDTO.md) |  | [optional] 
+**pick_up_location** | [**LocationDTO**](LocationDTO.md) |  | [optional] 
+**drop_off_location** | [**LocationDTO**](LocationDTO.md) |  | [optional] 
+**vehicle_type** | [**VehicleTypeDTO**](VehicleTypeDTO.md) |  | [optional] 
+**vehicle** | [**VehicleDTO**](VehicleDTO.md) |  | [optional] 
+**charges_summary** | **String** |  | [optional] 
+**quote_calculate_dto** | [**QuoteCalculateDTO**](QuoteCalculateDTO.md) |  | [optional] 
+
+
