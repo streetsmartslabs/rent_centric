@@ -127,6 +127,8 @@ module RentCentric
 
     attr_accessor :force_ending_format
 
+    attr_accessor :timezone_abbr
+
     def initialize
       @scheme = 'https'
       @host = 'www6.rentcentric.com:443'
@@ -144,6 +146,7 @@ module RentCentric
       @inject_format = false
       @force_ending_format = false
       @logger = defined?(Rails) ? Rails.logger : Logger.new(STDOUT)
+      @timezone_abbr = 'EST'
 
       yield(self) if block_given?
     end

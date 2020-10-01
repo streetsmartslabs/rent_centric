@@ -128,11 +128,11 @@ module RentCentric
       case type.to_sym
       when :DateTime
         split_vals = value.split('/')
-        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/')
+        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/') + ' ' + RentCentric.configure.timezone_abbr
         DateTime.parse(value)
       when :Date
         split_vals = value.split('/')
-        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/')
+        value = [split_vals[1], split_vals[0], split_vals[2..split_vals.length - 1]].join('/') + ' ' + RentCentric.configure.timezone_abbr
         Date.parse(value)
       when :String
         value.to_s
