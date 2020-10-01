@@ -84,7 +84,7 @@ module RentCentric
         :'country_code' => :'String',
         :'phone' => :'String',
         :'email' => :'String',
-        :'birthday' => :'Date',
+        :'birthday' => :'String',
         :'license_number' => :'String',
         :'license_expiry' => :'String',
         :'location_id' => :'Integer',
